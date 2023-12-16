@@ -31,9 +31,8 @@ const {loading , error} = useSelector((state) => state.user);
     dispatch(signInFailure(data.message));
       return;
     }
-    setLoading(false);
-    setError(null);
-    navigate('/');
+    dispatch(signInSuccess(data));
+      navigate('/');
   }
   catch(error){
     dispatch(signInFailure(error.message));
